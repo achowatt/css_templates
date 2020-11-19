@@ -4,11 +4,22 @@
     padding:0;
 }
 
+html {
+    font-size:16px;
+}
+
+@media only screen and (min-width: 1300px) {
+    html {
+        font-size: 21px;
+    }
+}
+
 body {
     font-family: 'Forum', cursive;
     min-width:340px;
     /* background-color: rgba(0, 0, 0, 0.267); */
 }
+
 
 /*** Navigation **/
 
@@ -69,6 +80,8 @@ nav {
 #wave {
     background-image: url("mockaroon-5B-CcdKM9LA-unsplash.jpg");
     background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
     height: 47vw;
     max-height: 39rem;
     -webkit-clip-path: url(#myClip);
@@ -76,7 +89,6 @@ nav {
     display:flex;
     justify-content: center;
     align-items: center;
-    /* filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5)); */
     /* filter: blur(2px); */
     /* box-shadow: inset 0px 0px 20px 10px rgba(0,0,0,0.6); */
 }
@@ -86,9 +98,9 @@ h1 {
     font-size: 5.5rem;
     display: inline-block;
     position: relative;
-    bottom: 100px;
-    right: 100px;
-    width: 310px;
+    bottom: 5.5rem;
+    right: 5rem;
+    width: 20rem;
     z-index: 1;
 }
 
@@ -105,8 +117,7 @@ h1 {
     display:flex;
     justify-content: flex-end;
     margin-top: 3rem;
-    height: 5rem;
-    filter: none;
+    height: 9rem;
 }
 .bottom-image {
     background-image: url("mae-mu-ppOPjqAJ3Mw-unsplash.jpg");
@@ -118,7 +129,6 @@ h1 {
     display: block;
     position: relative;
     filter: opacity(40%) contrast(120%);
-    /* bottom: 124px; */
 }
 
 .cookies {
@@ -208,7 +218,6 @@ p{
 
 /*** footer ***/
 footer{
-    /* margin-top:-124px; */
     height:10rem;
     background-color: black;
     color: white;
