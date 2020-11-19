@@ -1,0 +1,232 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body {
+    font-family: 'Forum', cursive;
+    min-width:340px;
+    /* background-color: rgba(0, 0, 0, 0.267); */
+}
+
+/*** Navigation **/
+
+nav {
+    display:flex;
+    margin: 1.8rem 0;
+    font-size: 1.3rem;
+}
+
+.nav {
+    width:40%;
+}
+
+.logo-nav {
+    width:20%;
+    display: flex;
+    justify-content: center;
+}
+
+.left-nav {
+    display:flex;
+    justify-content: flex-end;
+}
+
+.right-nav {
+    display:flex;
+}
+
+#macaron-logo {
+    width: 100px;
+}
+
+.nav > ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width:72%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media only screen and (max-width: 650px) {
+    .nav > ul{
+        width:90%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .nav > ul{
+        display:none;
+    }
+}
+
+/*** END of Navigation **/
+
+/*** Wave clip-path ***/
+#wave {
+    background-image: url("mockaroon-5B-CcdKM9LA-unsplash.jpg");
+    background-size: cover;
+    height: 47vw;
+    max-height: 39rem;
+    -webkit-clip-path: url(#myClip);
+    clip-path: url(#myClip);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /* filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5)); */
+    /* filter: blur(2px); */
+    /* box-shadow: inset 0px 0px 20px 10px rgba(0,0,0,0.6); */
+}
+/*** END of Wave clip-path ***/
+
+h1 {
+    font-size: 5.5rem;
+    display: inline-block;
+    position: relative;
+    bottom: 100px;
+    right: 100px;
+    width: 310px;
+    z-index: 1;
+}
+
+.and {
+    display: block;
+    font-size: 3.5rem;
+    position: relative;
+    line-height: 0.5;
+    left:170px;
+    width: 42px;
+}
+
+.bottom-text {
+    display:flex;
+    justify-content: flex-end;
+    margin-top: 3rem;
+    height: 5rem;
+    filter: none;
+}
+.bottom-image {
+    background-image: url("mae-mu-ppOPjqAJ3Mw-unsplash.jpg");
+    height:31rem;
+    background-repeat:no-repeat;
+    /* background-attachment: fixed; */
+    background-position: top; 
+    background-size: cover;
+    display: block;
+    position: relative;
+    filter: opacity(40%) contrast(120%);
+    /* bottom: 124px; */
+}
+
+.cookies {
+    display: block;
+    position: relative;
+    line-height: 0.7;
+    left:102px;
+    width: 42px;
+}
+
+p{
+    width: 30vw;
+    line-height: 1.5;
+    position: relative;
+    font-size: 1rem;
+    top: 5px;
+    right: 14px;
+    z-index: 1;
+}
+
+@media only screen and (max-width: 960px) {
+    p {
+        width:40vw;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    h1{
+        font-size: 9.5vw;
+        width: 37vw;
+        left: -5rem;
+        top: -10vw;
+    }
+
+    .and {
+        font-size:7vw;
+        left:19vw;
+    }
+
+    .cookies {
+        left: 11vw;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .bottom-text {
+        display: flex;
+        flex-direction: column-reverse;
+        /* justify-content: flex-end; */
+        margin-top: 5rem;
+        height: 13rem;
+        align-items: center;
+    }
+    p {
+        width:85vw;
+        right:0;
+        top:-16px;
+    }
+
+    h1{
+        font-size:4rem;
+    }
+    .and {
+        font-size:2rem;
+        left:8rem;
+    }
+
+    .cookies {
+        left: 5rem;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    p {
+        width:22vw;
+    }
+    .logo-nav {
+        width:10%;
+    }
+    .nav > ul{
+        width:50%;
+    }
+    .nav {
+        width:50%;
+    }
+}
+
+/*** footer ***/
+footer{
+    /* margin-top:-124px; */
+    height:10rem;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+a:visited,a:link {
+    color:white;
+    line-height: 2;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+a:hover {
+    cursor: pointer;
+}
+/*** footer ***/
