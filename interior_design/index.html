@@ -9,80 +9,199 @@
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Anaheim&display=swap" rel="stylesheet">
     <title>Interior Design</title>
 </head>
-<body>
-    <section class="left-section">
-        <nav class="left-nav">
-            <div class="nav-logo"><img src="assets/LogoMakr-6ZfUyY.png" alt="house logo"></div>
-            <ul>
-                <li><a href=""></a>about us</li>
-                <li><a href=""></a>portfolio</li>
-                <li><a href=""></a>shop</li>
-                <li><a href=""></a>contact</li>
-            </ul>
-        </nav>
-        <div class="pic-showcase-container">
-            <div class="pic-container"> 
-                <img src="assets/nathan-fertig-FBXuXp57eM0-unsplash.jpg" alt="interior design photo" class="pics pic1">
-                <img src="assets/roberto-nickson-tleCJiDOri0-unsplash.jpg" alt="living room photo" class="pics pic2">
-                <!-- <img src="" alt="" class="pic3">
-                <img src="" alt="" class="pic4">
-                <img src="" alt="" class="pic5">
-                <img src="" alt="" class="pic6"> -->
-            </div>
-            <div class="pic-controller">
-                <div class="arrow-up"><i class="fas fa-arrow-up"></i></div>
-                <div class="number">01</div>
-                <div class="dots">
-                    <i class="fas fa-circle"></i>
-                    <i class="fas fa-circle"></i>
-                    <i class="fas fa-circle"></i>
-                    <i class="fas fa-circle"></i>
-                    <i class="fas fa-circle"></i>
-                </div>
-                <div class="number">06</div>
-                <div class="arrow-down"><i class="fas fa-arrow-down"></i></div>
-            </div>
-        </div>
-    </section>
 
-    <section class="right-section">
-        <nav class="right-nav">
-            <button class="credits">credits</button>
-            <div class="hide-show-controller"></div>
-        </nav>
-        <div class="right-container">
-            <h1>Interior <span class="second-line"> Design</span></h1>
-            <div class="room-options-container">
-                <figure class="room-option">
-                    <img src="assets/creatv-eight-RryFk4n-vOs-unsplash.jpg" alt="kitchen" class="kitchen room-image">
-                    <figcaption>Kitchen</figcaption>
-                </figure>
-                <div class="divider"></div>
-                <figure class="room-option">
-                        <img src="assets/ashley-byrd-eRbOiQ4s5_g-unsplash.jpg" alt="bedroom" class="room-image bedroom">
-                    <figcaption>Bedroom</figcaption>
-                </figure>                
-                <div class="divider"></div>
-                <figure class="room-option">
-                    <img src="assets/sidekix-media-lrk0l9w8rI0-unsplash.jpg" alt="living room" class="room-image living-room">
-                    <figcaption>Living Room</figcaption>
-                </figure>
+<!-- Next steps: 
+    1. add underline to nav (whenever it is hovered)
+    2. add javascript to change pictures
+    3. add credit section (that comes out from the left side)
+
+-->
+<body>
+    <div class="container">
+        <section class="left-section">
+            <nav class="left-nav">
+                <div class="nav">
+                    <ul>
+                        <!-- <div class="nav-logo"><img src="assets/LogoMakr-6ZfUyY.png" alt="house logo"></div> -->
+                        <div class="nav-logo"><img src="assets/LogoMakr-1Pwpnz.png" alt="house logo"></div>
+                        <li><a href="">about us</a></li>
+                        <li><a href="">portfolio</a></li>
+                        <li><a href="">shop</a></li>
+                        <li><a href="">contact</a></li>
+                    </ul>
+                </div>
+                <button class="back">back</button>
+            </nav>
+            <div class="pic-showcase-container">
+                <div class="pic-container"> 
+                    <img src="assets/nathan-fertig-FBXuXp57eM0-unsplash.jpg" alt="interior design photo" class="pics pic1">
+                    <img src="assets/roberto-nickson-tleCJiDOri0-unsplash.jpg" alt="living room photo" class="pics pic2">
+                    <img src="assets/nathan-fertig-FBXuXp57eM0-unsplash.jpg" alt="interior design photo" class="pics pic1">
+                    <!-- <img src="" alt="" class="pic3">
+                    <img src="" alt="" class="pic4">
+                    <img src="" alt="" class="pic5">
+                    <img src="" alt="" class="pic6"> -->
+                </div>
+                <div class="pic-controller">
+                    <div class="arrow-up arrow"><i class="fas fa-arrow-up"></i></div>
+                    <div class="number">01</div>
+                    <div class="dots">
+                        <!-- using javascript to add dots according to number of pictures -->
+                    </div>
+                    <div class="number"><!-- using javascript to add numbers according to number of pictures --></div>
+                    <div class="arrow-down arrow"><i class="fas fa-arrow-down"></i></div>
+                </div>
             </div>
-            <div class="create-container">
-                <button class="create-product">Create a product</button>
+        </section>
+
+        <section class="right-section">
+            <nav class="right-nav">
+                <button class="hide-show-controller">credits</button>
+                <!-- <div class="hide-show-controller">hide</div> -->
+                
+            </nav>
+            <div class="right-container">
+                <h1>Interior <span class="second-line"> Design</span></h1>
+                <div class="room-options-container">
+                    <figure class="room-option">
+                        <img src="assets/creatv-eight-RryFk4n-vOs-unsplash.jpg" alt="kitchen" class="kitchen room-image">
+                        <figcaption>Kitchen</figcaption>
+                    </figure>
+                    <div class="divider"></div>
+                    <figure class="room-option">
+                            <img src="assets/ashley-byrd-eRbOiQ4s5_g-unsplash.jpg" alt="bedroom" class="room-image bedroom">
+                        <figcaption>Bedroom</figcaption>
+                    </figure>                
+                    <div class="divider"></div>
+                    <figure class="room-option">
+                        <img src="assets/sidekix-media-lrk0l9w8rI0-unsplash.jpg" alt="living room" class="room-image living-room">
+                        <figcaption>Living Room</figcaption>
+                    </figure>
+                </div>
+                <div class="create-container">
+                    <button class="create-product">Create a product</button>
+                </div>
+                <div class="icon-container">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
             </div>
-            <div class="icon-container">
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-youtube"></i>
-                <i class="fab fa-instagram"></i>
-            </div>
+        </section>
+    </div>
+    <div class="credit-container">
+        <h3 class="credit-heading">Thank you!</h3>
+        <div class="credits">
+            <p>Kitchen Photo by <a href="https://unsplash.com/@creatveight?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Creatv Eight</a> on <a href="https://unsplash.com/s/photos/living-room?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+            <p>Photo by <a href="https://unsplash.com/@byrdman85?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Ashley Byrd</a> on <a href="https://unsplash.com/s/photos/bed-room?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+            <p>Photo by <a href="https://unsplash.com/@sidekix?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Sidekix Media</a> on <a href="https://unsplash.com/s/photos/living-room?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+            <p>Logo by <a href="logomakr.com">logomakr.com</a></p>
+            <p>Photo by <a href="https://unsplash.com/@nathanfertig?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Nathan Fertig</a> on <a href="https://unsplash.com/s/photos/interior-design-teal?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+            <p>Photo by <a href="https://unsplash.com/@rpnickson?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Roberto Nickson</a> on <a href="https://unsplash.com/s/photos/interior-design?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
         </div>
-    </section>
-    <!-- <span>Kitchen Photo by <a href="https://unsplash.com/@creatveight?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Creatv Eight</a> on <a href="https://unsplash.com/s/photos/living-room?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
-    <span>Photo by <a href="https://unsplash.com/@byrdman85?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Ashley Byrd</a> on <a href="https://unsplash.com/s/photos/bed-room?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
-    <span>Photo by <a href="https://unsplash.com/@sidekix?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Sidekix Media</a> on <a href="https://unsplash.com/s/photos/living-room?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
-    <span>Logo by <a href="logomakr.com">logomakr.com</a></span>
-    <span>Photo by <a href="https://unsplash.com/@nathanfertig?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Nathan Fertig</a> on <a href="https://unsplash.com/s/photos/interior-design-teal?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
-    <span>Photo by <a href="https://unsplash.com/@rpnickson?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Roberto Nickson</a> on <a href="https://unsplash.com/s/photos/interior-design?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span> -->
+    </div>
+    <script>
+        let creditOpen = false;
+        // document.querySelector(".credit-button").addEventListener("click", function() {
+        //     if (creditOpen == false) {
+        //         document.querySelector(".credit-container").style.transform =  "translateX(0%)";
+        //         creditOpen = true;
+        //     } else {
+        //         document.querySelector(".credit-container").style.transform =  "translateX(100%)";
+        //         creditOpen = false;
+        //     }
+        // })
+
+        const totalImages = document.querySelectorAll(".pic-container img");
+        for (let i = 0; i < totalImages.length; i++) {
+            document.querySelector(".dots").innerHTML += "<i class='fas fa-circle'></i>";
+        }
+
+        let zero = "";
+        if (totalImages.length < 10) {
+            zero = "0";
+        }
+        document.getElementsByClassName("number")[1].textContent = zero + String(totalImages.length);
+
+        let pictureNumber = 1;
+
+        //up arrow
+        document.querySelector(".arrow-up").addEventListener("click", function() {
+            if (pictureNumber > 1) {
+                pictureNumber -= 1;
+                changeCircleColor();
+                changeImage();
+                if (pictureNumber == 1) {
+                    document.querySelector(".arrow-up").style.color="grey";
+                    console.log("lowest number");
+                }
+            }
+            document.querySelector(".arrow-down").style.color = "black";
+            console.log(pictureNumber);
+        })
+
+        //down arrow
+        document.querySelector(".arrow-down").addEventListener("click", function() {
+            let circles = document.querySelectorAll(".fa-circle");
+            if (pictureNumber < totalImages.length) {
+                pictureNumber += 1;
+                changeCircleColor();
+                changeImage();
+                if (pictureNumber == totalImages.length) {
+                    document.querySelector(".arrow-down").style.color="grey";
+                    console.log("highest number");
+                }
+            }
+            document.querySelector(".arrow-up").style.color = "black";
+            console.log(pictureNumber);
+        })
+
+        //credit button
+        document.querySelector(".hide-show-controller").addEventListener("click", function(){
+            if (!creditOpen) {
+                document.querySelector(".container").style.background = "linear-gradient(90deg, var(--background-color-left) 100%, var(--background-color-right) 0%)";
+                document.querySelector(".right-section").style.display = "none";
+                document.querySelector(".left-section").style.width = "82%";
+                document.querySelector(".credit-container").style.transform =  "translateX(0%)";
+                setTimeout(function(){ 
+                    creditOpen = true;
+                    document.querySelector(".back").style.display = "block";
+                }, 1000);
+            }
+        })
+
+        function changeCircleColor() {
+            let circles = document.querySelectorAll(".fa-circle");
+                for ( circle of circles){
+                    circle.style.color = "black";
+                }
+                circles[pictureNumber - 1].style.color = "orange";
+        }
+
+        function changeImage() {
+            let images = document.querySelectorAll(".pic-container img");
+                for (image of images){
+                        image.style.zIndex = "-1";
+                        image.style.opacity = "0";
+                    }
+                images[pictureNumber - 1].style.zIndex = "10";
+                images[pictureNumber - 1].style.opacity = "1";
+        }   
+
+        document.querySelector(".back").addEventListener("click", function() {
+            if (creditOpen) {
+                creditOpen = false;
+                document.querySelector(".container").style.background = "linear-gradient(90deg, var(--background-color-left) 50%, var(--background-color-right) 50%)";
+                document.querySelector(".credit-container").style.transform =  "translateX(100%)";
+                document.querySelector(".left-section").style.width = "50%";
+                document.querySelector(".right-section").style.display= "block";
+                // document.querySelector(".right-section").style.animation = "fadeIn ease 4s";
+                // setTimeout(function(){ 
+                    document.querySelector(".back").style.display = "none";
+                // }, 2000);
+            }
+        })
+        
+    </script>
 </body>
 </html>
