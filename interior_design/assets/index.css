@@ -25,7 +25,7 @@ html {
     font-size: 16px;
 }
 
-@media only screen and (min-width: 1320px) {
+@media only screen and (min-width: 1375px) {
     html {
         font-size: 22px;
     }
@@ -113,7 +113,8 @@ html {
     display: none;
 }
 .pic-showcase-container {
-    display:flex;
+    display: grid;
+    grid-template-columns: 1fr 111px;
     height: 100%;
 }
 
@@ -136,12 +137,11 @@ html {
     opacity: 0;
 }
 
-
 .pic-controller {
     height: 100%;
-    width: 20%;
+    /* width: 20%;
     min-width: 5rem;
-    max-width: 4.5rem;
+    max-width: 4.5rem; */
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -290,7 +290,6 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* height: 10%; */
 }
 
 button.create-product {
@@ -359,6 +358,7 @@ button.create-product {
 
 /*************/
 
+/* Big monitor*/
 @media only screen and (min-width: 1740px) {
     .left-section {
         max-width: 1420px;
@@ -367,4 +367,158 @@ button.create-product {
         width: calc(100% - 1420px);
     }
     
+}
+
+/* Small Screen */
+@media only screen and (max-width: 1025px) {
+    .container {
+        display:flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        height:unset;
+    }
+    .left-section {
+        width: 100%;
+        height:unset;
+    }
+
+    .left-nav {
+        height:5rem;
+    }
+
+    .nav ul {
+        display:flex;
+    }
+/* 
+    ul li:nth-child(1) { order: 3; }
+    ul li:nth-child(2) { order: 1; }
+    ul li:nth-child(3) { order: 4; }
+    ul li:nth-child(4) { order: 2; }
+    ul li:nth-child(5) { order: 5; } */
+
+    .left-nav .nav-logo {
+        position: absolute;
+        right: 2rem;
+        top: 1.5rem;
+    }
+
+    .nav-logo img {
+        margin: 0;
+    }
+    .nav {
+        display:flex;
+        justify-content: center;
+    }
+    .pic-showcase-container {
+        display: flex;
+        height:unset;
+        flex-direction: column;
+    }
+    .pic-container {
+        height:unset;
+        display:flex;
+    }
+
+    .pic-container .pics{
+        position: relative;
+        width:100vw;
+        height: auto;
+    }
+    .pic-controller {
+        flex-direction: row;
+        height: 5rem;
+    }
+    .pic-controller .dots {
+        flex-direction: row;
+        align-items: center;
+        width: 20%;
+    }
+    .right-section {
+        width: 100%;
+        height: calc(100vh - 4.5rem);
+    }
+
+    .right-nav {
+        height: 15vh;
+        max-height: unset;
+        display: flex;
+        align-items: flex-start;
+        padding-top:2rem;
+
+
+    }
+    .right-container {
+        grid-template-rows: 1fr 2fr 1fr 0.7fr;
+    }
+
+    h1 {
+        font-size: 8.2vw;
+        margin-top: -3rem;
+    }
+
+    .room-image{
+        height:18vw;
+        width:18vw;
+    }
+    .create-container {
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .create-product {
+        height: 2rem;
+        padding: 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .credit-button {
+        padding: 0.5rem 1rem;
+    }
+
+    .icon-container {
+        margin-bottom: 1rem;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    html {
+        font-size: 14px;
+    }
+
+    .divider {
+        display:none;
+    }
+    figure.room-option {
+        position:absolute;
+    }
+    /* hiding this for now -- will use javascript to show later */
+    figcaption { 
+        display:none;
+    }
+
+    .room-image {
+        height: 55vw;
+        width: 55vw;
+    }
+
+    h1 {
+        flex-direction: row;
+        font-size: 3rem;
+        margin-top: unset;
+    }
+
+    .second-line {
+        margin-left: 1rem;
+    }
+
+    .create-product {
+        margin-top:1.5rem;
+    }
+
+    .left-nav { /**hiding for now, will fix later**/
+        display:none;
+    }
+
+    .right-section {
+        height: 100vh;
+    }
 }
