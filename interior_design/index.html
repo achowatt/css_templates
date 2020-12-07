@@ -12,9 +12,6 @@
 
 <!-- Next steps: 
     1. add underline to nav (whenever it is hovered)
-    2. add javascript to change pictures
-    3. add credit section (that comes out from the left side)
-
 -->
 <body>
     <div class="container">
@@ -30,17 +27,15 @@
                         <li><a href="">contact</a></li>
                     </ul>
                 </div>
-                <button class="back">back</button>
+                <button class="back hide-show-controller">back</button>
             </nav>
             <div class="pic-showcase-container">
                 <div class="pic-container"> 
                     <img src="assets/nathan-fertig-FBXuXp57eM0-unsplash.jpg" alt="interior design photo" class="pics pic1">
                     <img src="assets/roberto-nickson-tleCJiDOri0-unsplash.jpg" alt="living room photo" class="pics pic2">
-                    <img src="assets/nathan-fertig-FBXuXp57eM0-unsplash.jpg" alt="interior design photo" class="pics pic1">
-                    <!-- <img src="" alt="" class="pic3">
-                    <img src="" alt="" class="pic4">
-                    <img src="" alt="" class="pic5">
-                    <img src="" alt="" class="pic6"> -->
+                    <img src="assets/creatv-eight-RryFk4n-vOs-unsplash.jpg" alt="living room photo" class="pics pic2">
+                    <img src="assets/ashley-byrd-eRbOiQ4s5_g-unsplash.jpg" alt="living room photo" class="pics pic2">
+                    <img src="assets/sidekix-media-lrk0l9w8rI0-unsplash.jpg" alt="living room photo" class="pics pic2">
                 </div>
                 <div class="pic-controller">
                     <div class="arrow-up arrow"><i class="fas fa-arrow-up"></i></div>
@@ -56,8 +51,7 @@
 
         <section class="right-section">
             <nav class="right-nav">
-                <button class="hide-show-controller">credits</button>
-                <!-- <div class="hide-show-controller">hide</div> -->
+                <button class="credit-button hide-show-controller">credits</button>
                 
             </nav>
             <div class="right-container">
@@ -101,17 +95,7 @@
         </div>
     </div>
     <script>
-        let creditOpen = false;
-        // document.querySelector(".credit-button").addEventListener("click", function() {
-        //     if (creditOpen == false) {
-        //         document.querySelector(".credit-container").style.transform =  "translateX(0%)";
-        //         creditOpen = true;
-        //     } else {
-        //         document.querySelector(".credit-container").style.transform =  "translateX(100%)";
-        //         creditOpen = false;
-        //     }
-        // })
-
+        //Change images //
         const totalImages = document.querySelectorAll(".pic-container img");
         for (let i = 0; i < totalImages.length; i++) {
             document.querySelector(".dots").innerHTML += "<i class='fas fa-circle'></i>";
@@ -131,13 +115,12 @@
                 pictureNumber -= 1;
                 changeCircleColor();
                 changeImage();
+                document.querySelector(".arrow-down .fa-arrow-down").classList.remove("disabled");
+                // document.querySelector(".arrow-up .fa-arrow-up").style.color= "#1e2827";
                 if (pictureNumber == 1) {
-                    document.querySelector(".arrow-up").style.color="grey";
-                    console.log("lowest number");
+                    document.querySelector(".arrow-up .fa-arrow-up").classList.add("disabled");
                 }
             }
-            document.querySelector(".arrow-down").style.color = "black";
-            console.log(pictureNumber);
         })
 
         //down arrow
@@ -145,28 +128,13 @@
             let circles = document.querySelectorAll(".fa-circle");
             if (pictureNumber < totalImages.length) {
                 pictureNumber += 1;
+                changeImage();
+                document.querySelector(".arrow-up .fa-arrow-up").classList.remove("disabled");
                 changeCircleColor();
                 changeImage();
                 if (pictureNumber == totalImages.length) {
-                    document.querySelector(".arrow-down").style.color="grey";
-                    console.log("highest number");
+                    document.querySelector(".arrow-down .fa-arrow-down").classList.add("disabled");
                 }
-            }
-            document.querySelector(".arrow-up").style.color = "black";
-            console.log(pictureNumber);
-        })
-
-        //credit button
-        document.querySelector(".hide-show-controller").addEventListener("click", function(){
-            if (!creditOpen) {
-                document.querySelector(".container").style.background = "linear-gradient(90deg, var(--background-color-left) 100%, var(--background-color-right) 0%)";
-                document.querySelector(".right-section").style.display = "none";
-                document.querySelector(".left-section").style.width = "82%";
-                document.querySelector(".credit-container").style.transform =  "translateX(0%)";
-                setTimeout(function(){ 
-                    creditOpen = true;
-                    document.querySelector(".back").style.display = "block";
-                }, 1000);
             }
         })
 
@@ -183,24 +151,39 @@
                 for (image of images){
                         image.style.zIndex = "-1";
                         image.style.opacity = "0";
-                    }
-                images[pictureNumber - 1].style.zIndex = "10";
-                images[pictureNumber - 1].style.opacity = "1";
+                     }
+                 images[pictureNumber - 1].style.zIndex = "10";
+                 images[pictureNumber - 1].style.opacity = "1";
         }   
 
-        document.querySelector(".back").addEventListener("click", function() {
-            if (creditOpen) {
-                creditOpen = false;
-                document.querySelector(".container").style.background = "linear-gradient(90deg, var(--background-color-left) 50%, var(--background-color-right) 50%)";
-                document.querySelector(".credit-container").style.transform =  "translateX(100%)";
-                document.querySelector(".left-section").style.width = "50%";
-                document.querySelector(".right-section").style.display= "block";
-                // document.querySelector(".right-section").style.animation = "fadeIn ease 4s";
-                // setTimeout(function(){ 
-                    document.querySelector(".back").style.display = "none";
-                // }, 2000);
-            }
-        })
+        //credit button (toggle between hide and show)
+
+        let creditOpen = false;
+        const hideShowControllers = document.querySelectorAll(".hide-show-controller");
+
+        for ( const controller of hideShowControllers) {
+            controller.addEventListener("click", function() {
+                if (!creditOpen) {
+                    creditOpen = true;
+                    document.querySelector(".credit-button").style.opacity = "0";
+                    document.querySelector(".credit-container").style.transform =  "translateX(0%)";
+                    document.querySelector(".left-section").style.width = "82%";
+                    document.querySelector(".right-section").style.width = "0%";
+                    window.setTimeout(function(){
+                        document.querySelector(".credit-button").style.opacity = "1";
+                    },1500);
+                } else {
+                    creditOpen = false;
+                    document.querySelector(".credit-button").style.opacity = "0";
+                    document.querySelector(".credit-container").style.transform =  "translateX(100%)";
+                    document.querySelector(".left-section").style.width = "50%";
+                    document.querySelector(".right-section").style.width = "50%";
+                    window.setTimeout(function(){
+                        document.querySelector(".credit-button").style.opacity = "1";
+                    },1500);
+                }
+            });
+        }
         
     </script>
 </body>

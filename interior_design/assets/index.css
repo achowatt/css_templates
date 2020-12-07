@@ -41,33 +41,23 @@ html {
 }
 
 .container {
-    /* background: linear-gradient(90deg ,var(--background-color-left) 50%, var(--background-color-right) 50%); */
-    background: linear-gradient(90deg, var(--background-color-left) 50%, var(--background-color-right) 50%);
-    /* background-image: linear-gradient(to right, #69908c 50%, #365651 50%); */
     display:flex;
     height:100vh;
     width:100%;
+    overflow-x: hidden;
     /* font-family: Arial, Helvetica, sans-serif; */
     /* font-family: 'Unica One', cursive; */
     font-family: 'Anaheim', sans-serif;
-    /* animation: curtains 10s ease-in-out infinite alternate; */
-}
-
-@keyframes curtains {
-    0% {
-        background-image: linear-gradient(90deg ,var(--background-color-left) 100%, var(--background-color-right) 0%);
-    }
-    100% {
-        background-image: linear-gradient(90deg ,var(--background-color-left) 50%, var(--background-color-right) 50%);
-    }
+    background: var(--background-color-right);
 }
 
 /** left section **/
 .left-section { 
     width:50%;
+    background: var(--background-color-left);
     display:flex;
     flex-direction: column;
-    transition: all 3s;
+    transition: width linear 1s;
 }
 .left-nav {
     color:var(--nav-bar-text);
@@ -86,6 +76,12 @@ html {
     display:flex;
     justify-content: center;
     align-items: center;
+}
+
+.nav li a:link,
+.nav li a:visited  {
+    text-decoration: none;
+    color:black;
 }
 
 .nav-logo img {
@@ -133,7 +129,7 @@ html {
     top:0;
     left:0;
     height: 100%;
-    transition: all 4s;
+    transition: all linear 0.3s;
 }
 
 .pics:not(.pic1){
@@ -153,23 +149,19 @@ html {
     font-size:1.5rem;
 }
 
+/* ARROWS */
 .arrow-up .fa-arrow-up, .arrow-down .fa-arrow-down {
     color:#1e2827;
     font-size: 1rem;
     transition: color 0.2s;
 }
 
-.arrow-up:hover .fa-arrow-up, .arrow-down:hover .fa-arrow-down {
+.arrow-up .fa-arrow-up:hover ,.arrow-down .fa-arrow-down:hover  {
     color: orange;
-    /* transition: color 0.4s; */
 }
 
 .arrow-up:active .fa-arrow-up, .arrow-down:active .fa-arrow-down {
     color: white;
-}
-
-.arrow-up {
-    color:gainsboro;
 }
 
 .arrow-up, .arrow-down {
@@ -180,10 +172,13 @@ html {
     justify-content: center;
     align-items: center;
 }
-.fa-arrow-up::after, .fa-arrow-down::after {
+
+.arrow-up .fa-arrow-up.disabled, .arrow-down .fa-arrow-down.disabled {
+    color: rgb(201, 198, 198);
+}
+/* .fa-arrow-up::after, .fa-arrow-down::after {
     content:"";
     position: absolute;
-    opacity: 0;
     top:0;
     left:0;
     width:3rem;
@@ -192,13 +187,7 @@ html {
     border:rgb(207, 207, 207) 2px solid;
     background-image: linear-gradient(to bottom left, #69908c, #365651);
     z-index:-1;
-    transition: all 1.5s;
-}
-
-.arrow-up:hover .fa-arrow-up::after, .arrow-down:hover .fa-arrow-down::after{
-    opacity: 1;
-    transition: all 1.5s;
-}
+} */
 
 .pic-controller .dots {
     height:7.5rem;
@@ -210,6 +199,7 @@ html {
 
 .dots .fa-circle {
     color:#1e2827;
+    transition: color 0.3s;
 }
 
 .pic-controller .number {
@@ -223,16 +213,8 @@ html {
 .right-section { 
     width:50%;
     color:rgb(255, 100, 10);
+    transition: width linear 1s;
 }
-
-@keyframes fadeIn {
-    0% {
-        linear-gradient(90deg, var(--background-color-left) 100%, var(--background-color-right) 0%);
-    }
-    100% {
-        linear-gradient(90deg, var(--background-color-left) 50%, var(--background-color-right) 50%)
-    }
-  }
 
 .right-nav {
     height: 15%;
@@ -243,7 +225,7 @@ html {
     margin: 0 2rem;
 }
 
-.credit-button, .hide-show-controller {
+.credit-button {
     padding:0.5rem 1rem;
     font-size: 1rem;
     font-family: 'Anaheim', sans-serif;
@@ -253,6 +235,7 @@ html {
     color:white;
     text-transform: capitalize;
     z-index:10;
+    transition: opacity 0.3s;
 }
 
 .right-container {
@@ -340,7 +323,6 @@ button.create-product {
 
 /** credits **/
 .credit-container {
-    display:block;
     background-color: #000000;
     color:white;
     width:18%;
@@ -356,8 +338,7 @@ button.create-product {
     align-items: center;
     justify-content: center;
     transform: translateX(100%);
-    transition: all 2s;
-
+    transition: transform 1s;
 }
 
 .credit-heading {
@@ -377,3 +358,13 @@ button.create-product {
 }
 
 /*************/
+
+@media only screen and (min-width: 1740px) {
+    .left-section {
+        max-width: 1420px;
+    }
+    .credit-container {
+        width: calc(100% - 1420px);
+    }
+    
+}
