@@ -7,6 +7,9 @@
     <script src="https://kit.fontawesome.com/25f692c22b.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Anaheim&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+    
     <title>Interior Design</title>
 </head>
 
@@ -98,7 +101,42 @@
             <p>Photo by <a href="https://unsplash.com/@rpnickson?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Roberto Nickson</a> on <a href="https://unsplash.com/s/photos/interior-design?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
         </div>
     </div>
-    <script>
+
+    <section class="lazy slider" data-sizes="100vw">
+        <div>
+          <img data-lazy="https://res.cloudinary.com/djv69vvs7/image/upload/c_scale,w_650/v1607377422/interiordesign/nathan-fertig-FBXuXp57eM0-unsplash_oyq5u5.jpg" data-srcset="https://res.cloudinary.com/djv69vvs7/image/upload/c_scale,w_650/v1607377422/interiordesign/nathan-fertig-FBXuXp57eM0-unsplash_oyq5u5.jpg 650w, https://res.cloudinary.com/djv69vvs7/image/upload/c_scale,w_960/v1607377422/interiordesign/nathan-fertig-FBXuXp57eM0-unsplash_oyq5u5.jpg 960w" data-sizes="100vw">
+        </div>
+        <div>
+          <img data-lazy="https://res.cloudinary.com/djv69vvs7/image/upload/c_scale,w_650/v1607377421/interiordesign/sidekix-media-lrk0l9w8rI0-unsplash_lql3f3.jpg" data-srcset="https://res.cloudinary.com/djv69vvs7/image/upload/c_scale,w_650/v1607377421/interiordesign/sidekix-media-lrk0l9w8rI0-unsplash_lql3f3.jpg 650w, https://res.cloudinary.com/djv69vvs7/image/upload/c_scale,w_960/v1607377421/interiordesign/sidekix-media-lrk0l9w8rI0-unsplash_lql3f3.jpg 960w" data-sizes="100vw">
+        </div>
+        <div>
+          <img data-lazy="https://res.cloudinary.com/djv69vvs7/image/upload/c_scale,w_650/v1607377421/interiordesign/roberto-nickson-tleCJiDOri0-unsplash_gvbm3u.jpg"  data-srcset="https://res.cloudinary.com/djv69vvs7/image/upload/c_scale,w_1300/v1607377421/interiordesign/roberto-nickson-tleCJiDOri0-unsplash_gvbm3u.jpg 650w, https://res.cloudinary.com/djv69vvs7/image/upload/c_scale,w_960/v1607377421/interiordesign/roberto-nickson-tleCJiDOri0-unsplash_gvbm3u.jpg 960w" data-sizes="100vw">
+        </div>
+        <div>
+          <img data-lazy="https://res.cloudinary.com/djv69vvs7/image/upload/c_scale,w_650/v1607377413/interiordesign/creatv-eight-RryFk4n-vOs-unsplash_gzng4z.jpg"  data-srcset="https://res.cloudinary.com/djv69vvs7/image/upload/c_scale,w_650/v1607377413/interiordesign/creatv-eight-RryFk4n-vOs-unsplash_gzng4z.jpg 650w, https://res.cloudinary.com/djv69vvs7/image/upload/c_scale,w_960/v1607377413/interiordesign/creatv-eight-RryFk4n-vOs-unsplash_gzng4z.jpg 960w" data-sizes="100vw">
+        </div>
+        <div>
+          <img data-lazy="https://res.cloudinary.com/djv69vvs7/image/upload/c_scale,w_650/v1607377412/interiordesign/ashley-byrd-eRbOiQ4s5_g-unsplash_e2tx81.jpg"  data-srcset="https://res.cloudinary.com/djv69vvs7/image/upload/c_scale,w_650/v1607377412/interiordesign/ashley-byrd-eRbOiQ4s5_g-unsplash_e2tx81.jpg 650w, https://res.cloudinary.com/djv69vvs7/image/upload/c_scale,w_960/v1607377412/interiordesign/ashley-byrd-eRbOiQ4s5_g-unsplash_e2tx81.jpg 960w" data-sizes="100vw">
+        </div>
+      </section>
+
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+                $(".lazy").slick({
+                infinite: true,
+                dots: true, 
+                swipe:true,
+                touchMove:true,
+                arrows:false,
+                initialSlide: 0,
+
+                // slidesToShow: 4,
+                // slidesToScroll: 2
+            });
+        });
+
         //Change images //
         const totalImages = document.querySelectorAll(".pic-container img");
         for (let i = 0; i < totalImages.length; i++) {
@@ -188,7 +226,6 @@
                 }
             });
         }
-        
     </script>
 </body>
 </html>

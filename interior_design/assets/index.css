@@ -25,6 +25,10 @@ html {
     font-size: 16px;
 }
 
+body {
+    /* overflow-x: hidden; */
+}
+
 @media only screen and (min-width: 1375px) {
     html {
         font-size: 22px;
@@ -410,9 +414,10 @@ button.create-product {
         justify-content: center;
     }
     .pic-showcase-container {
-        display: flex;
+        /* display: flex;
         height:unset;
-        flex-direction: column;
+        flex-direction: column; */
+        display:none;
     }
     .pic-container {
         height:unset;
@@ -522,3 +527,5 @@ button.create-product {
         height: 100vh;
     }
 }
+
+
