@@ -205,21 +205,39 @@
 
         for ( const controller of hideShowControllers) {
             controller.addEventListener("click", function() {
+                let width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                let height = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
+
                 if (!creditOpen) {
                     creditOpen = true;
                     document.querySelector(".credit-button").style.opacity = "0";
-                    document.querySelector(".credit-container").style.transform =  "translateX(0%)";
-                    document.querySelector(".left-section").style.width = "82%";
-                    document.querySelector(".right-section").style.width = "0%";
+                    if (width >= 1025){
+                        document.querySelector(".credit-container").style.transform =  "translateX(0%)";
+                        document.querySelector(".left-section").style.width = "82%";
+                        document.querySelector(".right-section").style.width = "0%";
+                    } else {
+                        document.querySelector(".credit-container").style.transform =  "translateX(0%)";
+                        document.querySelector(".left-section").style.width = "100%";
+                        document.querySelector(".right-section").style.width = "100%";
+                        document.querySelector("body").style.overflow = "hidden";
+                    }
                     window.setTimeout(function(){
                         document.querySelector(".credit-button").style.opacity = "1";
                     },1500);
                 } else {
                     creditOpen = false;
                     document.querySelector(".credit-button").style.opacity = "0";
-                    document.querySelector(".credit-container").style.transform =  "translateX(100%)";
-                    document.querySelector(".left-section").style.width = "50%";
-                    document.querySelector(".right-section").style.width = "50%";
+                    if (width >= 1025){
+                        document.querySelector(".credit-container").style.transform =  "translateX(100%)";
+                        document.querySelector(".left-section").style.width = "50%";
+                        document.querySelector(".right-section").style.width = "50%";
+                        
+                    } else {
+                        document.querySelector(".credit-container").style.transform =  "translateX(100%)";
+                        document.querySelector(".left-section").style.width = "100%";
+                        document.querySelector(".right-section").style.width = "100%";
+                        document.querySelector("body").style.overflow = "auto";
+                    }
                     window.setTimeout(function(){
                         document.querySelector(".credit-button").style.opacity = "1";
                     },1500);
